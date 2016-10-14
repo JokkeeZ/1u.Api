@@ -6,7 +6,7 @@
     public class APIJsonResponse
     {
         /// <summary>
-        /// Incase there was an error creating short url, value becames 1, otherwise 0.
+        /// Incase there was an error creating short url, value becames true, otherwise false.
         /// </summary>
         public bool Error { get; internal set; }
 
