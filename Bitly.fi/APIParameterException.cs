@@ -9,9 +9,9 @@ namespace Bitly.fi.API
     public class APIParameterException : Exception
     {
         /// <summary>
-        /// Initializes a new instance of <seealso cref="APIParameterException"/> with a specified error message.
+        /// Initializes a new instance of <see cref="APIParameterException"/> with a specified error message.
         /// </summary>
-        /// <param name="message">Error message to be printed on exception.</param>
+        /// <param name="message">Error message to be printed on <see cref="Exception"/>.</param>
         public APIParameterException(string message) : base(message) { }
     }
 }

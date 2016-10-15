@@ -16,17 +16,12 @@
         public string APIKey { get; set; }
 
         /// <summary>
-        /// Custom alias for creating custom ending short urls.
+        /// Custom alias for creating custom ending shorturls.
         /// </summary>
         public string CustomAlias { get; set; }
 
         /// <summary>
-        /// Controls server response type, default value is false for JSON response, otherwise response will be plain text.
-        /// </summary>
-        public bool Text { get; set; } = false;
-
-        /// <summary>
-        /// Initializes new instance of <seealso cref="APIRequestParameters"/> with default values.
+        /// Initializes new instance of <see cref="APIRequestParameters"/> with default values.
         /// </summary>
         public APIRequestParameters() { }
     }

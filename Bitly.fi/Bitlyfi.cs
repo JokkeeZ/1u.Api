@@ -11,15 +11,15 @@ namespace Bitly.fi.API
         internal const string URL = "http://bitly.fi/api?api={0}&url={1}";
 
         /// <summary>
-        /// Initializes new instance of <seealso cref="Bitlyfi"/> API wrapper.
+        /// Initializes new instance of <see cref="Bitlyfi"/> API wrapper.
         /// </summary>
         public Bitlyfi() { }
 
         /// <summary>
         /// Parses JSON string from server response.
         /// </summary>
-        /// <param name="parameters">Custom parameters for inititializing request. (APIKey and Url needed always, Text parameter needs to be false.)</param>
-        /// <returns>New <seealso cref="APIJsonResponse"/> object from server response.</returns>
+        /// <param name="parameters">Custom parameters for inititializing request. (APIKey and Url needed always)</param>
+        /// <returns>New <see cref="APIJsonResponse"/> object from server response.</returns>
         public APIJsonResponse GetJsonResponse(APIRequestParameters parameters)
         {
             if (parameters == null)
@@ -30,9 +30,6 @@ namespace Bitly.fi.API
 
             if (parameters.Url == null)
                 throw new APIParameterException("Url parameter is required for request.");
-
-            if (parameters.Text)
-                throw new APIParameterException("Use GetTextResponse() method instead for text response.");
 
             using (var client = new WebClient())
             {
@@ -57,8 +54,8 @@ namespace Bitly.fi.API
         /// <summary>
         /// Parses string from server response.
         /// </summary>
-        /// <param name="parameters">Custom parameters for inititializing request. (APIKey and Url needed always, Text parameter needs to be true.)</param>
-        /// <returns>New <seealso cref="APITextResponse"/> object from server response.</returns>
+        /// <param name="parameters">Custom parameters for inititializing request. (APIKey and Url needed always)</param>
+        /// <returns>New <see cref="APITextResponse"/> object from server response.</returns>
         public APITextResponse GetTextResponse(APIRequestParameters parameters)
         {
             if (parameters == null)
@@ -69,9 +66,6 @@ namespace Bitly.fi.API
 
             if (parameters.Url == null)
                 throw new APIParameterException("Url parameter is required for request.");
-
-            if (parameters.Text != true)
-                throw new APIParameterException("Text parameter needs to be 'true' for text response.");
 
             using (var client = new WebClient())
             {
