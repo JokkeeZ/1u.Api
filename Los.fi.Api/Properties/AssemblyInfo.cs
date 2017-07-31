@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Example")]
-[assembly: AssemblyDescription("Example program for Los.fi.Api Library")]
+[assembly: AssemblyTitle("Los.fi.Api")]
+[assembly: AssemblyDescription("Wrapper for Los.fi API requests.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Example")]
+[assembly: AssemblyCompany("Los.fi")]
+[assembly: AssemblyProduct("Los.fi.Api")]
 [assembly: AssemblyCopyright("Copyright © JokkeeZ 2016 - 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9f31c399-78be-454a-aa63-ed82a9106403")]
+[assembly: Guid("3282adf4-5797-42f7-95a8-ed6ffec27f23")]
 
 // Version information for an assembly consists of the following four values:
 //

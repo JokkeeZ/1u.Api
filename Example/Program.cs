@@ -1,38 +1,49 @@
-﻿using Bitly.fi.API;
+﻿using Los.fi.Api;
 using static System.Console;
 
 namespace Example
 {
-    class Program
-    {
-        static Bitlyfi bitlyfi;
+	class Program
+	{
+		static LosApi api;
 
-        static void Main(string[] args)
-        {
-            // Create new Bitlyfi object for api requests.
-            bitlyfi = new Bitlyfi();
+		static void Main(string[] args)
+		{
+			// Create new LosApi object for api requests.
+			api = new LosApi();
 
-            // Send request to Bitly.fi server with custom url-parameters.
-            var parameters = new APIRequestParameters()
-            {
-                APIKey = "APIKEY",
-                Url = "URL TO BE SHORTENED"
-            };
+			// Send request to Los.fi server with custom url-parameters.
+			var parameters = new ApiRequestParameters()
+			{
+				ApiKey = "APIKEY",
+				Url = "URL TO BE SHORTENED",
 
-            // Send plaintext request
-            PlainTextRequest(parameters);
-        }
+				// Optional.
+				CustomAlias = "This_is_my_custom_alias"
+			};
 
-        static void JsonRequest(APIRequestParameters parameters)
-        {
-            var response = bitlyfi.GetJsonResponse(parameters);
-            WriteLine(((response.Error) ? response.ErrorMsg : response.ShortUrl));
-        }
+			// Get plaintext request and print short url to console.
+			PlainTextRequest(parameters);
+		}
 
-        static void PlainTextRequest(APIRequestParameters parameters)
-        {
-            var response = bitlyfi.GetTextResponse(parameters);
-            WriteLine(response.ShortUrl);
-        }
-    }
+		static void JsonRequest(ApiRequestParameters parameters)
+		{
+			var response = api.GetJsonResponse(parameters);
+
+			if (response != null)
+			{
+				WriteLine(response.Error == 1 ? response.ErrorMessage : response.ShortUrl);
+			}
+		}
+
+		static void PlainTextRequest(ApiRequestParameters parameters)
+		{
+			var response = api.GetTextResponse(parameters);
+
+			if (response != null)
+			{
+				WriteLine(response.ShortUrl);
+			}
+		}
+	}
 }
