@@ -1,18 +1,18 @@
-﻿using Los.fi.Api;
+﻿using Urlshortener.Api;
 using static System.Console;
 
 namespace Example
 {
 	class Program
 	{
-		static LosApi api;
+		static URLShortener api;
 
 		static void Main(string[] args)
 		{
-			// Create new LosApi object for api requests.
-			api = new LosApi();
+			// Create new URLShortener object for api requests.
+			api = new URLShortener();
 
-			// Send request to Los.fi server with custom url-parameters.
+			// Send request to 1u.fi server with custom url-parameters.
 			var parameters = new ApiRequestParameters()
 			{
 				ApiKey = "APIKEY",
