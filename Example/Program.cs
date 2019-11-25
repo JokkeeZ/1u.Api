@@ -5,28 +5,23 @@ namespace Example
 {
 	class Program
 	{
-		static URLShortener api;
-
 		static void Main(string[] args)
 		{
-			// Create new URLShortener object for api requests.
-			api = new URLShortener();
+			using var api = new URLShortener();
 
-			// Send request to 1u.fi server with custom url-parameters.
-			var parameters = new ApiRequestParameters()
+			// Send request to 1u.fi endpoint with custom url-parameters.
+			// Gets plaintext response and print short url to Console.
+			SendPlainTextRequest(api, new ApiRequestParameters
 			{
-				ApiKey = "APIKEY",
-				Url = "URL TO BE SHORTENED",
+				ApiKey = "YOUR API KEY",
+				Url = "URL TO SHORTEN",
 
 				// Optional.
-				CustomAlias = "This_is_my_custom_alias"
-			};
-
-			// Get plaintext request and print short url to console.
-			PlainTextRequest(parameters);
+				CustomAlias = "OPTIONAL CUSTOM ALIAS"
+			});
 		}
 
-		static void JsonRequest(ApiRequestParameters parameters)
+		static void SendJsonRequest(URLShortener api, ApiRequestParameters parameters)
 		{
 			var response = api.GetJsonResponse(parameters);
 
@@ -36,13 +31,13 @@ namespace Example
 			}
 		}
 
-		static void PlainTextRequest(ApiRequestParameters parameters)
+		static void SendPlainTextRequest(URLShortener api, ApiRequestParameters parameters)
 		{
 			var response = api.GetTextResponse(parameters);
 
 			if (response != null)
 			{
-				WriteLine(response.ShortUrl);
+				WriteLine(response);
 			}
 		}
 	}

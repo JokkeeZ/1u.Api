@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Represents parameters for initializing request to 1u.fi API endpoint.
 	/// </summary>
-	public struct ApiRequestParameters
+	public class ApiRequestParameters
 	{
 		/// <summary>
 		/// Url to be shortened.

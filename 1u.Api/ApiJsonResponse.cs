@@ -3,7 +3,7 @@
 namespace Urlshortener.Api
 {
 	/// <summary>
-	/// Represents values from server response to json request.
+	/// Represents values from endpoint response to json request.
 	/// </summary>
 	public class ApiJsonResponse : IApiResponse
 	{
@@ -14,7 +14,7 @@ namespace Urlshortener.Api
 		public int Error { get; internal set; }
 
 		/// <summary>
-		/// Short url from server response.
+		/// Short url from endpoint response.
 		/// </summary>
 		[JsonProperty("short")]
 		public string ShortUrl { get; internal set; }
